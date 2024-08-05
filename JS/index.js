@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {//triggers event when 
                 <span class="delete">X</span>
             `;
             todolist.appendChild(li);
-            li.querySelector('.check').addEventListener('click', (event)=>{
+            /*li.querySelector('.check').addEventListener('click', (event)=>{
                 alert(taskValue+" is completed");
                 let checkTask = event.target.parentElement;//selecting the paticular list element
                 checkTask.classList.toggle("completed");
@@ -48,13 +48,33 @@ document.addEventListener('DOMContentLoaded', function() {//triggers event when 
                 alert(taskValue+" deleted succeddfully");
                 li.innerHTML="";//removing that task
                 updateTotalTask();
-            });
+            });*/
+            li.querySelector('.check').addEventListener('click', markTaskComplete);
+            li.querySelector('.delete').addEventListener('click', deleteTask);
             taskInput.value = ""; // Reset input field
             updateTotalTask();//calling updateTotalTask function
         } else {
             alert('Please enter some To Do list item');
         }
     }
+
+    //function for marktask completed
+
+    function markTaskComplete(event) {
+        const taskItem = event.target.parentElement;
+        taskItem.classList.toggle("completed");
+        updateTotalTask();
+    }
+
+    //function for delete task
+    
+    function deleteTask(event) {
+        const taskItem = event.target.parentElement;
+        taskItem.remove(); // This will remove the taskItem from the DOM
+        updateTotalTask();
+    }
+
+
 
     //CompleteAll Tasks function
 

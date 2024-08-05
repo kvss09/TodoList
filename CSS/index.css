@@ -1,0 +1,186 @@
+/* general Styling */
+body {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: rgb(217, 224, 231);*/
+  background-image: url(/Images/Conainter-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+/*Container Styling */
+.Container {
+  height: auto;
+  width: 60vw;
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 0.4rem;
+  animation: fadeInAnimation ease 2s;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Container h2 {
+  margin-top: 1em;
+}
+.Container p {
+  display: inline-block;
+}
+
+.Container hr {
+  width: 90%;
+  opacity: 0.4;
+  height: 0.1px;
+}
+
+/* add Buttton*/
+#addButton {
+  display: inline-flex;
+  width: 4.2rem;
+  height: 2.8em;
+  padding: 10px;
+  border: none;
+  text-align: center;
+  margin: 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#CompleteTasks {
+  position: relative;
+  text-align: left;
+  margin-right: 6em;
+  margin-bottom: 1em;
+}
+
+#ClearTasks {
+  position: relative;
+  text-align: right;
+  margin-left: 6em;
+  margin-bottom: 1em;
+}
+
+/*Text box styling*/
+input[type="text"] {
+  height: 2.3em;
+  width: 75%;
+  margin: 1em;
+  padding: 0.5em;
+  border: none;
+  background-color: rgb(252, 250, 250);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/*styling ToDoList */
+
+.toDoList {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.toDoList li {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*styling the checkboxes */
+.check {
+  cursor: pointer;
+  color: rgb(13, 199, 13);
+}
+
+.delete {
+  cursor: pointer;
+  color: rgb(236, 25, 25);
+}
+
+/*styling completed list elements*/
+.completed {
+  opacity: 0.2;
+}
+
+/*Animations*/
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*psuedo classes*/
+
+.Container:hover {
+  transform: scale(1.15);
+}
+
+#taskInput:hover {
+  cursor: pointer;
+}
+
+#taskInput:focus {
+  background-color: rgba(240, 238, 238, 0.962);
+}
+
+#addButton:hover {
+  background-color: #ff6b6b;
+  cursor: pointer;
+}
+
+#ClearTasks::before {
+  content: "\292C";
+  color: rgb(236, 25, 25);
+  font-size: medium;
+  cursor: pointer;
+}
+
+#CompleteTasks::before {
+  content: "\2713";
+  color: rgb(13, 199, 13);
+  cursor: pointer;
+}
+
+/*media Quries for the page*/
+
+@media (max-width: 700px) {
+  .Container {
+    width: 100%;
+    display: block;
+  }
+
+  #addButton {
+    display: block;
+    width: 95%;
+  }
+
+  #ClearTasks {
+    display: block;
+    margin-right: 15px;
+  }
+
+  #CompleteTasks {
+    display: block;
+    margin-left: 15px;
+  }
+
+  input[type="text"] {
+    width: 90%;
+  }
+
+  .Container:hover {
+    transform: scale(1);
+  }
+}

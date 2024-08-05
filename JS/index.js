@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {//triggers event when 
 
     function markTaskComplete(event) {
         const taskItem = event.target.parentElement;
-        taskItem.classList.toggle("completed");
+        taskItem.classList.toggle("completed");//this will add class name to completed to parentelement
         updateTotalTask();
     }
 
